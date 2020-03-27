@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "迷你简粗圆", "Fira Code", serif;
+}
+
+#bgImg {
+    background: url("photo_index.jpg") no-repeat;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-size: cover;
+    position: absolute;
+    overflow: hidden;
+}
+
+#title {
+    text-align: center;
+    height: 100px;
+    width: auto;
+    margin-top: 80px;
+}
+
+h1 {
+    font-size: 80px;
+    font-weight: bold;
+    letter-spacing: 20px;
+    background-image: linear-gradient(#273d54, #20698c, #ecf0f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#inputDiv {
+    margin: 50px auto;
+    padding: 20px 50px;
+    height: 260px;
+    width: 200px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+
+p {
+    margin-top: 18px;
+}
+
+a {
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-decoration: none;
+    background-image: linear-gradient(#378fb7, #ecf0f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

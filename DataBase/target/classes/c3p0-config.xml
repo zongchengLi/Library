@@ -1,0 +1,39 @@
+<c3p0-config>
+    <!-- 使用默认的配置读取连接池对象 -->
+    <default-config>
+        <!--  连接参数 -->
+        <property name="driverClass">com.mysql.cj.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/library</property>
+        <property name="user">root</property>
+        <property name="password">root</property>
+
+        <!-- 连接池参数 -->
+        <!--定义在从数据库获取新连接失败后重复尝试的次数。默认值: 30 ；小于等于0表示无限次-->
+        <property name="acquireIncrement">3</property>
+
+        <!--每60秒检查所有连接池中的空闲连接。默认值: 0，不检查 -->
+        <property name="idleConnectionTestPeriod">60</property>
+
+        <!-- 初始化连接池中的连接数，取值应在minPoolSize与maxPoolSize之间，默认为3-->
+        <property name="initialPoolSize">10</property>
+
+        <!--最大空闲时间，60秒内未使用则连接被丢弃。若为0则永不丢弃。默认值: 0 -->
+        <property name="maxIdleTime">60</property>
+
+        <!--连接池中保留的最大连接数。默认值: 15 -->
+        <property name="maxPoolSize">20</property>
+
+        <!-- 连接池中保留的最小连接数，默认为：3-->
+        <property name="minPoolSize">5</property>
+
+        <!--c3p0全局的PreparedStatements缓存的大小。如果maxStatements与maxStatementsPerConnection均为0，
+        则缓存不生效，只要有一个不为0，则语句的缓存就能生效。如果默认值: 0-->
+        <property name="maxStatements">100</property>
+
+        <!-- 当连接池连接耗尽时，客户端调用getConnection()后等待获取新连接的时间，超时后将抛出SQLException，
+        如设为0则无限期等待。单位毫秒。默认: 0 -->
+        <property name="checkoutTimeout">3000</property>
+
+    </default-config>
+
+</c3p0-config>
