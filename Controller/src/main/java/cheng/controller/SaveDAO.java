@@ -20,7 +20,7 @@ public class SaveDAO extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
-        resp.setCharacterEncoding("UTF-8");
+        resp.setContentType("text/html; charset=UTF-8");
         Book book = (Book) req.getAttribute("book");
         System.out.println(book.toString());
         BookDAO bookDAO = new BookDAO();

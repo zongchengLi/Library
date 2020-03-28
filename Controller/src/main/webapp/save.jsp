@@ -8,6 +8,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <html>
 <head>
+    <meta charset="UTF-8"/>
     <link rel="stylesheet" href="save.css"/>
     <title>添加图书</title>
 </head>
