@@ -12,13 +12,13 @@ import java.util.List;
  * @create 2020-03-26 12:59
  */
 public class BookDAO {
-
+    
     private Connection conn;
-
+    
     public BookDAO() {
         conn = DataBaseConnectionPool.getConnectionPool();
     }
-
+    
     // 添加图书信息 返回true/false
     public boolean save(Book b) {
         String save_sql = "CALL sp_save_book(?,?,?,?,?,?);";
@@ -37,7 +37,7 @@ public class BookDAO {
         }
         return false;
     }
-
+    
     // 显示已有图书 返回List<Book>
     public List<Book> query() {
         List<Book> L = new ArrayList<>();
@@ -46,8 +46,8 @@ public class BookDAO {
             CallableStatement stmt = conn.prepareCall(query_sql);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                L.add(new Book(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getDouble(5),
-                               rs.getString(6)));
+                L.add(new Book(rs.getString(1), rs.getString(2), rs.getString(3),
+                        rs.getString(4), rs.getDouble(5), rs.getString(6)));
             }
             return L;
         } catch (SQLException e) {
@@ -55,5 +55,56 @@ public class BookDAO {
         }
         return null;
     }
-
+    
+    // 基于ISBN 查询 t_book表的图书信息
+    public Book selectBookByISBN(String ISBN) {
+        Book book = null;
+        String sql = "CALL sp_select_book_by_ISBN(?);";
+        try {
+            CallableStatement stmt = conn.prepareCall(sql);
+            stmt.setString(1, ISBN);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                book = new Book(rs.getString(1), rs.getString(2), rs.getString(3),
+                        rs.getString(4), rs.getDouble(5), rs.getString(6));
+            }
+            return book;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    
+    // 基于ISBN 删除 t_book表的图书信息
+    public boolean deleteBookByISBN(String ISBN) {
+        String sql = "CALL sp_delete_book_by_ISBN(?);";
+        try {
+            CallableStatement stmt = conn.prepareCall(sql);
+            stmt.setString(1, ISBN);
+            int value = stmt.executeUpdate();
+            return value > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    
+    // 基于ISBN 更新 t_book表的图书信息
+    public boolean updateBookByISBN(Book book) {
+        String sql = "CALL sp_update_book_by_ISBN(?,?,?,?,?,?);";
+        try {
+            CallableStatement stmt = conn.prepareCall(sql);
+            stmt.setString(1, book.getISBN());
+            stmt.setString(2, book.getName());
+            stmt.setString(3, book.getPublisher());
+            stmt.setString(4, book.getAuthor());
+            stmt.setDouble(5, book.getPrice());
+            stmt.setString(6, book.getAbout());
+            int value = stmt.executeUpdate();
+            return value > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

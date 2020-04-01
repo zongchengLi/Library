@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "迷你简卡通", "Fira Code", serif;
+}
+
+#bgImg {
+    background: url("photo_feedback.jpg") no-repeat;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-size: cover;
+    position: absolute;
+    overflow: hidden;
+}
+
+#bg {
+    float: left;
+    margin: 150px 0;
+    padding-top: 60px;
+    width: 100%;
+    height: 240px;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.8), 0 -10px 25px rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+#span1 {
+    margin-bottom: 30px;
+    font-size: 90px;
+    font-weight: bold;
+}
+
+#span2 {
+    position: relative;
+    font-size: 25px;
+    font-weight: bold;
+    left: 400px;
+    top: 55px;
+}
+
+.clock {
+    color: red;
+}

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/DataBase/src/main/java/cheng/database/BookDAO.java" dialect="MySQL" />
+    <file url="PROJECT" dialect="MySQL" />
+  </component>
   <component name="SqlResolveMappings">
     <file url="file://$PROJECT_DIR$/DataBase/src/main/java/cheng/database/BookDAO.java" scope="{&quot;node&quot;:{  &quot;@negative&quot;:&quot;1&quot;,  &quot;group&quot;:{   &quot;@kind&quot;:&quot;root&quot;,   &quot;node&quot;:{    &quot;name&quot;:{     &quot;@qname&quot;:&quot;ae20e008-72e9-4cb2-9fcb-4a683c3ae4d4&quot;    },    &quot;group&quot;:{     &quot;@kind&quot;:&quot;schema&quot;,     &quot;node&quot;:{      &quot;name&quot;:{       &quot;@qname&quot;:&quot;library&quot;      }     }    }   }  } }}" />
   </component>

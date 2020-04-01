@@ -1,23 +1,24 @@
 package cheng.database;
 
-import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
 
 /**
  * @author Li Zongcheng
  * @create 2020-03-26 13:31
  */
 class BookDAOTest {
-
+    
     BookDAO bookDAO = null;
-
-
+    
+    
     @BeforeEach
     public void init() {
         bookDAO = new BookDAO();
     }
-
+    
     @Test
     public void testSave() {
         String ISBN = "978-7-302-50736-9";
@@ -34,12 +35,18 @@ class BookDAOTest {
             System.out.println("Save Fail!");
         }
     }
-
+    
     @Test
     public void testQuery() {
         List<Book> L = bookDAO.query();
         for (Book x : L) {
             System.out.println(x);
         }
+    }
+    
+    @Test
+    void selectBookByISBN() {
+        String ISBN = "999-3-456-66666-2";
+        System.out.println(bookDAO.selectBookByISBN(ISBN));
     }
 }

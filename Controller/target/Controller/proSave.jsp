@@ -19,10 +19,6 @@
 <jsp:setProperty name="book" property="author" param="author"/>
 <jsp:setProperty name="book" property="price" param="price"/>
 <jsp:setProperty name="book" property="about" param="about"/>
-<%
-    request.setCharacterEncoding("UTF-8");
-    response.setCharacterEncoding("UTF-8");
-%>
 <jsp:forward page="/save"/>
 </body>
 </html>

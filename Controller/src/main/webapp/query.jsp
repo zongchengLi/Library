@@ -11,30 +11,31 @@
 
 <html>
 <head>
-    <link rel="stylesheet" href="query.css"/>
+    <link rel="stylesheet" href="query.css" />
     <title>图书信息</title>
 </head>
 <body>
 <div id="nav">
-    <a href="index.jsp"><img src="photo_back.png" alt="back Index"/></a>
+    <a id="aImg" href="index.jsp"><img src="photo_back.png" alt="back Index" /></a>
     <span id="head">图书信息</span>
 </div>
 <div id="bgImg">
     <div id="bg">
-        <c:if test="${books.size()<1}">
-
+        <c:if test="${requestScope.books==null}">
+            当前没有图书信息！
         </c:if>
-        <c:if test="${books.size()>0}">
+        <c:if test="${requestScope.books!=null}">
             <table>
                 <tr>
                     <td>ISBN</td>
                     <td>图书名称</td>
                     <td>出版社</td>
                     <td>作者</td>
-                    <td>价格</td>
+                    <td style="width: 32px">价格</td>
                     <td>简介</td>
+                    <td style="width: 32px">操作</td>
                 </tr>
-                <c:forEach items="${books}" var="book">
+                <c:forEach items="${requestScope.books}" var="book">
                     <tr>
                         <td>${book.ISBN}</td>
                         <td>${book.name}</td>
@@ -42,6 +43,11 @@
                         <td>${book.author}</td>
                         <td>${book.price}</td>
                         <td>${book.about}</td>
+                        <td>
+                            <a class="operate" href="edit?ISBN=${book.ISBN}">修改</a>
+                            <br />
+                            <a class="operate" href="delete?ISBN=${book.ISBN}">删除</a>
+                        </td>
                     </tr>
                 </c:forEach>
             </table>

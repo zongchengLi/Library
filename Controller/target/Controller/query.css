@@ -13,7 +13,7 @@
     background: rgba(255, 255, 255, 0.9);
 }
 
-a {
+#aImg {
     position: relative;
     left: 35px;
     top: 10px;
@@ -25,7 +25,7 @@ a {
     margin-left: -122px;
     letter-spacing: 15px;
     font-size: 30px;
-    color: rgba(0,0,0,0.8);
+    color: rgba(0, 0, 0, 0.8);
 }
 
 #bgImg {
@@ -35,6 +35,10 @@ a {
     z-index: -1;
     position: absolute;
     overflow: hidden;
+}
+
+.operate {
+    margin: 5px 0;
 }
 
 #bg {
