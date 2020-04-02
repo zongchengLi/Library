@@ -8,20 +8,20 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="save.css"/>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="save.css" />
     <title>添加图书</title>
 </head>
 <body>
 <div id="back">
-    <a href="index.jsp"><img src="photo_back.png" alt="back Index"/></a>
+    <a href="../index.jsp"><img src="../images/photo_back.png" alt="back Index" /></a>
 </div>
 <div id="bgImg">
     <form id="saveForm" action="proSave.jsp" method="post" accept-charset="UTF-8">
         <h1>图书信息</h1>
         <div class="table">
             <span>I S B N ：</span>
-            <input name="ISBN" class="input" type="text" maxlength="18"/>
+            <input name="ISBN" class="input" type="text" maxlength="18" />
         </div>
         <div class="table">
             <span>图书名称：</span>

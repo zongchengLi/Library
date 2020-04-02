@@ -7,13 +7,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/delete")
+@WebServlet("/admin/delete")
 public class DeleteDAO extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+        HttpSession session = req.getSession();
         BookDAO bookDAO = new BookDAO();
         String ISBN = req.getParameter("ISBN");
         boolean isSuccess = bookDAO.deleteBookByISBN(ISBN);
@@ -27,8 +29,8 @@ public class DeleteDAO extends HttpServlet {
             msg = "删除图书信息失败！";
             System.out.println(ISBN + " - " + msg);
         }
-        req.setAttribute("title", title);
-        req.setAttribute("msg", msg);
-        req.getRequestDispatcher("feedback.jsp").forward(req, resp);
+        session.setAttribute("title", title);
+        session.setAttribute("msg", msg);
+        resp.sendRedirect("../feedback.jsp");
     }
 }

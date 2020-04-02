@@ -19,6 +19,6 @@
 <jsp:setProperty name="book" property="author" param="author" />
 <jsp:setProperty name="book" property="price" param="price" />
 <jsp:setProperty name="book" property="about" param="about" />
-<jsp:forward page="/update" />
+<jsp:forward page="/admin/update" />
 </body>
 </html>

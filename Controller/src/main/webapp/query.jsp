@@ -16,7 +16,7 @@
 </head>
 <body>
 <div id="nav">
-    <a id="aImg" href="index.jsp"><img src="photo_back.png" alt="back Index" /></a>
+    <a id="aImg" href="index.jsp"><img src="images/photo_back.png" alt="back Index" /></a>
     <span id="head">图书信息</span>
 </div>
 <div id="bgImg">
@@ -44,9 +44,9 @@
                         <td>${book.price}</td>
                         <td>${book.about}</td>
                         <td>
-                            <a class="operate" href="edit?ISBN=${book.ISBN}">修改</a>
+                            <a class="operate" href="admin/edit?ISBN=${book.ISBN}">修改</a>
                             <br />
-                            <a class="operate" href="delete?ISBN=${book.ISBN}">删除</a>
+                            <a class="operate" href="admin/delete?ISBN=${book.ISBN}">删除</a>
                         </td>
                     </tr>
                 </c:forEach>

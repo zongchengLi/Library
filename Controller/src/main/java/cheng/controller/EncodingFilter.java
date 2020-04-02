@@ -1,9 +1,9 @@
 package cheng.controller;
 
 
-import java.io.IOException;
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
+import java.io.IOException;
 
 /**
  * @author Li Zongcheng
@@ -18,6 +18,7 @@ public class EncodingFilter implements Filter {
         throws IOException, ServletException {
         servletRequest.setCharacterEncoding("UTF-8");
         servletResponse.setCharacterEncoding("UTF-8");
+        servletResponse.setContentType("text/html; charset=UTF-8");
         filterChain.doFilter(servletRequest, servletResponse);
     }
 

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/edit")
+@WebServlet("/admin/edit")
 public class EditDao extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp)

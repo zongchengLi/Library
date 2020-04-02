@@ -11,7 +11,10 @@
     </div>
     <div id="inputDiv">
         <p>
-            <a href="save.jsp">添加图书</a>
+            <a href="login.jsp">管理员登录</a>
+        </p>
+        <p>
+            <a href="./admin/save.jsp">添加图书</a>
         </p>
         <p>
             <a href="query">查看所有图书</a>

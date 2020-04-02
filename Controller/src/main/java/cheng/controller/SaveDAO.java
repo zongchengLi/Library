@@ -2,12 +2,13 @@ package cheng.controller;
 
 import cheng.database.Book;
 import cheng.database.BookDAO;
-import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * @author Li Zongcheng
@@ -34,7 +35,7 @@ public class SaveDAO extends HttpServlet {
             System.out.println("失败 - " + book.toString());
         }
         req.setAttribute("msg", msg);
-        req.getRequestDispatcher("save.jsp").forward(req, resp);
+        req.getRequestDispatcher("admin/save.jsp").forward(req, resp);
     }
 
 }

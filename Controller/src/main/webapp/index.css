@@ -5,7 +5,7 @@
 }
 
 #bgImg {
-    background: url("photo_index.jpg") no-repeat;
+    background: url("images/photo_index.jpg") no-repeat;
     height: 100%;
     width: 100%;
     z-index: -1;

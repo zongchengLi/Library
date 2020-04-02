@@ -10,18 +10,19 @@
     position: absolute;
     box-shadow: 0 2px 5px gray;
     z-index: 1;
-    background: rgba(255, 255, 255, 0.9);
+    background: white;
 }
 
 #aImg {
     position: relative;
     left: 35px;
-    top: 10px;
+    top: 8px;
 }
 
 #head {
     position: relative;
     left: 50%;
+    top: 5px;
     margin-left: -122px;
     letter-spacing: 15px;
     font-size: 30px;
@@ -29,12 +30,12 @@
 }
 
 #bgImg {
-    background: url("photo_query.jpg") repeat;
+    background: url("images/photo_query.jpg") repeat;
     height: 100%;
     width: 100%;
     z-index: -1;
     position: absolute;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .operate {

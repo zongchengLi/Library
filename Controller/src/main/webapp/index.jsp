@@ -1,7 +1,7 @@
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="index.css" />
     <title>Index</title>
 </head>
 <body>
@@ -11,7 +11,10 @@
     </div>
     <div id="inputDiv">
         <p>
-            <a href="save.jsp">添加图书</a>
+            <a href="login.jsp">管理员登录</a>
+        </p>
+        <p>
+            <a href="./admin/save.jsp">添加图书</a>
         </p>
         <p>
             <a href="query">查看所有图书</a>

@@ -8,12 +8,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/update")
+@WebServlet("/admin/update")
 public class UpdateDAO extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        HttpSession session = req.getSession();
         Book book = (Book) req.getAttribute("book");
         BookDAO bookDAO = new BookDAO();
         boolean isSuccess = bookDAO.updateBookByISBN(book);
@@ -27,8 +29,11 @@ public class UpdateDAO extends HttpServlet {
             msg = "修改图书信息失败！";
             System.out.println("失败 - " + book.toString());
         }
-        req.setAttribute("title", title);
+        /*req.setAttribute("title", title);
         req.setAttribute("msg", msg);
-        req.getRequestDispatcher("feedback.jsp").forward(req, resp);
+        req.getRequestDispatcher("feedback.jsp").forward(req, resp);*/
+        session.setAttribute("title", title);
+        session.setAttribute("msg", msg);
+        resp.sendRedirect("../feedback.jsp");
     }
 }

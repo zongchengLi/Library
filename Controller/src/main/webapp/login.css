@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "迷你简粗圆", "Fira Code", serif;
+}
+
+#bgImg {
+    background: url("images/photo_login.png") no-repeat;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-size: cover;
+    position: absolute;
+    overflow: hidden;
+}
+
+#tips {
+    height: 100%;
+    width: 100%;
+    float: left;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+#tips > div {
+    height: 200px;
+    width: 800px;
+    margin: 200px auto;
+    /*padding: 30px 10px;*/
+    text-align: center;
+
+    /*  border-radius: 20px;
+        background: rgba(9, 132, 227, 0.6);
+        box-shadow: 5px 0 25px rgba(9, 132, 227, 0.5), -5px 0 25px rgba(9, 132, 227, 0.5),
+        0 5px 25px rgba(9, 132, 227, 0.5), 0 -5px 25px rgba(9, 132, 227, 0.5);*/
+}
+
+#tips > div > span {
+    display: inline-block;
+    margin: 30px auto;
+    font-weight: bold;
+    font-size: 50px;
+    color: rgba(0, 184, 148, 1.0);
+    text-shadow: 3px 3px 5px #fdcb6e;
+}
+
+#loginForm {
+    margin: 90px 230px;
+    padding: 20px 50px;
+    height: 420px;
+    width: 300px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+h1 {
+    font-size: 50px;
+    margin: 10px 0 70px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
+    /*  background-image: linear-gradient(#9a6ad6,#0984e3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;*/
+}
+
+.input {
+    margin: 30px 0;
+}
+
+.title {
+    margin-right: 5px;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#psdTitle {
+    margin-right: 13px;
+}
+
+#name, #psd {
+    border: none;
+    height: 30px;
+    width: 161px;
+    font-size: 15px;
+    background: none;
+    border-bottom: rgba(0, 0, 0, 0.7) dashed 2px;
+}
+
+#name {
+    font-size: 25px;
+}
+
+#divBtn {
+    text-align: center;
+}
+
+#btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 23px;
+    font-weight: bold;
+    margin: 55px auto 27px;
+    height: 55px;
+    width: 190px;
+    border-radius: 30px;
+    text-align: center;
+    border: none;
+}
+
+#btn:hover {
+    cursor: pointer;
+}
+
+#reg {
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+}
+
+#reg > a {
+    font-weight: bold;
+    text-decoration: none;
+}
+

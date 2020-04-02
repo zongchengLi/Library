@@ -14,7 +14,7 @@
 </head>
 <body>
 <div id="back">
-    <a href="index.jsp"><img src="photo_back.png" alt="back Index"/></a>
+    <a href="../index.jsp"><img src="../images/photo_back.png" alt="back Index"/></a>
 </div>
 <div id="bgImg">
     <form id="saveForm" action="proSave.jsp" method="post" accept-charset="UTF-8">
