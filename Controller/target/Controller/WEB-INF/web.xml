@@ -4,5 +4,10 @@
 
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
+
+    <!-- 【销毁】超过 1分钟 未操作的会话 -->
+    <session-config>
+        <session-timeout>1</session-timeout>
+    </session-config>
 </web-app>
 

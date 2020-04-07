@@ -8,34 +8,32 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-/**
- * @author Li Zongcheng
- * @create 2020-03-26 16:10
- */
-
-@WebServlet("/save")
-public class SaveDAO extends HttpServlet {
-
+@WebServlet("/admin/update")
+public class UpdateServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
-        resp.setContentType("text/html; charset=UTF-8");
+        HttpSession session = req.getSession();
         Book book = (Book) req.getAttribute("book");
-        System.out.println(book.toString());
         BookDAO bookDAO = new BookDAO();
-        boolean isSuccess = bookDAO.save(book);
-        String msg;
+        boolean isSuccess = bookDAO.updateBookByISBN(book);
+        String msg, title;
         if (isSuccess) {
-            msg = "成功提交图书信息！";
+            title = "成功修改信息";
+            msg = "成功修改图书信息！";
             System.out.println("成功 - " + book.toString());
         } else {
-            msg = "提交图书信息失败！";
+            title = "修改信息失败";
+            msg = "修改图书信息失败！";
             System.out.println("失败 - " + book.toString());
         }
+        /*req.setAttribute("title", title);
         req.setAttribute("msg", msg);
-        req.getRequestDispatcher("admin/save.jsp").forward(req, resp);
+        req.getRequestDispatcher("feedback.jsp").forward(req, resp);*/
+        session.setAttribute("title", title);
+        session.setAttribute("msg", msg);
+        resp.sendRedirect("../feedback.jsp");
     }
-
 }

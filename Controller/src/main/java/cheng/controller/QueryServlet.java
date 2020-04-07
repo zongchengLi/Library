@@ -2,13 +2,14 @@ package cheng.controller;
 
 import cheng.database.Book;
 import cheng.database.BookDAO;
-import java.io.IOException;
-import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.List;
 
 /**
  * @author Li Zongcheng
@@ -16,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 
 @WebServlet("/query")
-public class QueryDAO extends HttpServlet {
-
+public class QueryServlet extends HttpServlet {
+    
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         BookDAO bookDAO = new BookDAO();
@@ -25,5 +26,5 @@ public class QueryDAO extends HttpServlet {
         req.setAttribute("books", L);
         req.getRequestDispatcher("query.jsp").forward(req, resp);
     }
-
+    
 }

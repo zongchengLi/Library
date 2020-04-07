@@ -27,7 +27,7 @@
         <c:if test="${requestScope.books!=null}">
             <table>
                 <tr>
-                    <td>ISBN</td>
+                    <td style="width: 165px">ISBN</td>
                     <td>图书名称</td>
                     <td>出版社</td>
                     <td>作者</td>

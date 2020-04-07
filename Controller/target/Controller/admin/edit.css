@@ -14,7 +14,6 @@
     background: url("../images/photo_edit.jpg") no-repeat;
     height: 100%;
     width: 100%;
-    z-index: -1;
     background-size: cover;
     position: absolute;
     overflow: hidden;

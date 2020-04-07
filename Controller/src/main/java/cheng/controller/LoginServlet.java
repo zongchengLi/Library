@@ -15,7 +15,7 @@ import java.io.IOException;
  * @create 2020-04-02 14:09
  */
 @WebServlet("/login")
-public class LoginDAO extends HttpServlet {
+public class LoginServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UserDAO userDAO = new UserDAO();
